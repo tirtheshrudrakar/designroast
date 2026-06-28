@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import WelcomeModal from "@/components/WelcomeModal";
-import RoastButton from "@/components/RoastButton";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white overflow-hidden">
@@ -32,9 +32,12 @@ export default function Home() {
           Get brutally honest AI feedback that actually makes you better.
         </p>
 
-        <RoastButton className="inline-block bg-orange-500 hover:bg-orange-400 text-black font-black text-xl px-10 py-5 rounded-2xl transition transform hover:scale-105">
-          Roast My Design Free
-        </RoastButton>
+        <Link
+          href="/login"
+          className="inline-block bg-orange-500 hover:bg-orange-400 text-black font-black text-xl px-10 py-5 rounded-2xl transition transform hover:scale-105"
+        >
+           Roast My Design 
+        </Link>
 
         <p className="text-zinc-600 text-sm mt-4">Login and get roasted. Just pain.</p>
       </section>
