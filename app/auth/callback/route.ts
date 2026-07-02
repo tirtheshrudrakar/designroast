@@ -25,5 +25,5 @@ export async function GET(request: Request) {
   }
 
   // Redirect to welcome (or roast) AFTER the session is actually created
-return NextResponse.redirect(`${origin}/roast`)
+return NextResponse.redirect(`${origin}/roast1`)
 }

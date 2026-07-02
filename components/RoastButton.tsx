@@ -17,7 +17,7 @@ export default function RoastButton({ className, children }: RoastButtonProps) {
     const { data } = await supabase.auth.getUser();
 
     if (data.user) {
-      router.push("/roast");
+      router.push("/roast1");
     } else {
       router.push("/login");
     }
