@@ -1,16 +1,15 @@
 "use client";
 import html2canvas from 'html2canvas-pro';
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 interface Props {
   cardRef: React.RefObject<HTMLDivElement | null>;
   overall: number;
   badge: string;
   oneLiner: string;
-  roastId?: string;
 }
 
-export default function ShareButton({ cardRef, overall, badge, oneLiner, roastId }: Props) {
+export default function ShareButton({ cardRef, overall, badge, oneLiner }: Props) {
   const [downloading, setDownloading] = useState(false);
 
   const handleDownload = async () => {
@@ -34,18 +33,11 @@ export default function ShareButton({ cardRef, overall, badge, oneLiner, roastId
 
   const handleTweet = () => {
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://designroast.vercel.app";
-    const shareUrl = roastId ? `${appUrl}/r/${roastId}` : appUrl;
-    const text = `I got roasted by AI 😭 My design scored ${overall}/10 ${badge}\n\n"${oneLiner}"\n\nGet your design roasted 👇\n${shareUrl}`;
+    const text = `I got roasted by AI 😭 My design scored ${overall}/10 ${badge}\n\n"${oneLiner}"\n\nGet your design roasted 👇\n${appUrl}`;
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`,
       "_blank"
     );
-  };
-
-  const handleCopyLink = () => {
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://designroast.vercel.app";
-    const shareUrl = roastId ? `${appUrl}/r/${roastId}` : appUrl;
-    navigator.clipboard.writeText(shareUrl);
   };
 
   return (
@@ -55,12 +47,6 @@ export default function ShareButton({ cardRef, overall, badge, oneLiner, roastId
         className="flex-1 bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 rounded-xl transition text-sm"
       >
         𝕏 Share on Twitter
-      </button>
-      <button
-        onClick={handleCopyLink}
-        className="flex-1 border border-zinc-700 hover:border-zinc-500 text-white font-bold py-3 rounded-xl transition text-sm"
-      >
-        🔗 Copy Link
       </button>
       <button
         onClick={handleDownload}

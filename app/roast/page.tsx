@@ -14,7 +14,7 @@ interface RoastResult {
   one_liner: string;
   fix: string;
   badge: string;
-  id?: string;
+  
 }
 
 const LOADING_MSGS = [
@@ -128,7 +128,6 @@ export default function RoastPage() {
               overall={result.overall}
               badge={result.badge}
               oneLiner={result.one_liner}
-              roastId={result.id}
             />
             <button
               onClick={() => { setResult(null); setPreview(""); setImage(null); }}
