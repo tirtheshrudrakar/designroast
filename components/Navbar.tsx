@@ -27,13 +27,13 @@ export default function Navbar() {
   const avatar = user?.user_metadata?.avatar_url;
 
   return (
-    <nav className="flex items-center justify-between px-6 py-5 border-b border-zinc-800">
-      <Link href="/" className="inline-flex items-center gap-3 text-xl font-black hover:text-orange-500 transition">
-         <img className="w-20 h-20 object-contain" src="/logo.png" alt="logo" />
-         <span>DesignR🔥ast</span>
+    <nav className="flex items-center justify-between px-3 sm:px-6 py-3 sm:py-5 border-b border-zinc-800">
+      <Link href="/" className="inline-flex items-center gap-1.5 sm:gap-3 text-sm sm:text-xl font-black hover:text-orange-500 transition min-w-0">
+         <img className="w-9 h-9 sm:w-14 sm:h-14 md:w-20 md:h-20 object-contain shrink-0" src="/logo.png" alt="logo" />
+         <span className="whitespace-nowrap">DesignR🔥ast</span>
       </Link>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4 shrink-0">
         <Link href="/leaderboard" className="text-zinc-400 hover:text-white text-sm transition hidden sm:block">
           Hall of Shame
         </Link>
@@ -42,12 +42,12 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setShowMenu(!showMenu)}
-              className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 px-3 py-2 rounded-xl transition"
+              className="flex items-center gap-1.5 sm:gap-2 bg-zinc-800 hover:bg-zinc-700 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl transition"
             >
               {avatar ? (
                 <img src={avatar} className="w-6 h-6 rounded-full" alt="" />
               ) : (
-                <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-black text-xs font-black">
+                <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-black text-xs font-black shrink-0">
                   {firstName[0]}
                 </div>
               )}
@@ -81,9 +81,10 @@ export default function Navbar() {
         ) : (
           <Link
             href="/login"
-            className="bg-orange-500 hover:bg-orange-400 text-black font-bold px-4 py-2 rounded-xl text-sm transition"
+            className="bg-orange-500 hover:bg-orange-400 text-black font-bold px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm transition whitespace-nowrap"
           >
-            Login to get roasted
+            <span className="sm:hidden">Login</span>
+            <span className="hidden sm:inline">Login to get roasted</span>
           </Link>
         )}
       </div>
