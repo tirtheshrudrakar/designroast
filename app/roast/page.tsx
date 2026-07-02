@@ -111,11 +111,11 @@ export default function RoastPage() {
           >
             {loading ? (
               <span className="flex items-center justify-center gap-3">
-                <span className="animate-spin">🔥</span>
+                <span className="animate-spin">🌝</span>
                 {LOADING_MSGS[msgIndex]}
               </span>
             ) : (
-              "🔥 ROAST MY DESIGN"
+              " ROAST MY DESIGN"
             )}
           </button>
         )}

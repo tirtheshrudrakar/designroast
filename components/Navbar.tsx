@@ -35,7 +35,7 @@ export default function Navbar() {
     <nav className="flex items-center justify-between px-6 py-5 border-b border-zinc-800">
       <Link href="/" className="inline-flex items-center gap-3 text-xl font-black hover:text-orange-500 transition">
          <img className="w-20 h-20 object-contain" src="/logo.png" alt="logo" />
-         <span>DesignRoast</span>
+         <span>DesignR🔥ast</span>
       </Link>
 
       <div className="flex items-center gap-4">

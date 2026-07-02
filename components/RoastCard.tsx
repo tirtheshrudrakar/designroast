@@ -90,7 +90,7 @@ const RoastCard = forwardRef<HTMLDivElement, Props>(
 
         {/* Watermark */}
         <div className="px-6 pb-4 text-center">
-          <p className="text-zinc-600 text-xs">🔥 designroast.vercel.app</p>
+          <p className="text-zinc-600 text-xs"> designroast.vercel.app</p>
         </div>
       </div>
     );

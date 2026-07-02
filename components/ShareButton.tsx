@@ -1,5 +1,5 @@
 "use client";
-import html2canvas from "html2canvas";
+import html2canvas from 'html2canvas-pro';
 import { useRef, useState } from "react";
 
 interface Props {
