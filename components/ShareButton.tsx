@@ -32,7 +32,7 @@ export default function ShareButton({ cardRef, overall, badge, oneLiner }: Props
   };
 
   const handleTweet = () => {
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://designroast.vercel.app";
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://designroast-rudrakartirth-5532s-projects.vercel.app";
     const text = `I got roasted by AI 😭 My design scored ${overall}/10 ${badge}\n\n"${oneLiner}"\n\nGet your design roasted 👇\n${appUrl}`;
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`,
